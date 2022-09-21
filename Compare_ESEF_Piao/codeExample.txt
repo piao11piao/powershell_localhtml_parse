@@ -1,0 +1,4 @@
+$Source = Get-Content -path .\02_Cherry_AG_JAP_31.12.2021.xhtml -raw
+$HTML = New-Object -Com "HTMLFile"
+$HTML.IHTMLDocument2_write($Source)
+$HTML.body.outerText > outer.txt

@@ -1,0 +1,14 @@
+#1. put the content of html to "Source"
+$Source = Get-Content -path <HTML path> -raw
+
+#2. creat a html object
+$HTML = New-Object -Com "HTMLFile"
+
+#3. use html object mothod
+$HTML.IHTMLDocument2_write($Source)
+
+#4. get the outerText of this html to your destination
+$HTML.body.outerText > <destination>
+
+
+Tips: You can also use other properties to get different content like: links, images....
